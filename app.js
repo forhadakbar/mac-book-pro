@@ -22,22 +22,15 @@ function updateTotal() {
 
 // Function to update total after discount
 function updatePromo() {
-    const finalTotal = parseFloat(document.getElementById("final-total").innerText);
+    const totalBeforeDiscout = parseFloat(document.getElementById("total-price").innerText);
     const promoInput = document.getElementById("promo-input").value;
 
-    if (promoInput == 'stevekaku') {
-        document.getElementById("final-total").innerText = finalTotal * 0.8;
-        document.getElementById("discount-msg").style.display = "block";
-        document.getElementById("discount-msg").style.color = "green";
-        document.getElementById("discount-amount").innerText = finalTotal * .20;
-    }
-    else {
-        document.getElementById("discount-msg").style.display = "block";
-        document.getElementById("discount-msg").innerText = "Please try with valid promo code"
-        document.getElementById("discount-msg").style.color = "red";
+    if (promoInput == "stevekaku") {
+        document.getElementById("final-total").innerText = totalBeforeDiscout * 0.8;
     }
 
     document.getElementById("promo-input").value = "";
+
 }
 
 
